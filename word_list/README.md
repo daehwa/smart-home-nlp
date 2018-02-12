@@ -1,7 +1,7 @@
-We use One-hot encoding method
+This uses One-hot encoding method
 
 
-
+'''
 0: TurnOn
 1: TurnOff
 2: SetBrightness
@@ -10,7 +10,7 @@ We use One-hot encoding method
 5: SetColortemp
 6: IncreaseColortemp
 7: DecreaseColortemp
-
+'''
 
 
 After read a sentence, we use highest possibility one (one-hot)

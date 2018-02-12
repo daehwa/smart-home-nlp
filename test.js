@@ -42,8 +42,6 @@ PythonShell.run('./ex.py', options, function (err, results) {
 			hash.set(w[0],w[1]);
 		}
 		sen.push(hash);
-		//comprehend(word[0],hash);
-		//comprehend(word[0],word.slice(1,word.length));
 	}
 	comprehendAction(sen);
   var json = {
@@ -73,21 +71,14 @@ function comprehendAction(sen){
 	}
 	var index = oneHot.indexOf(Math.max.apply(null, oneHot)); // find highest possibility one.
 	action = namespaces[index];
-	console.log(action);
+
+	for(i in sen){
+		getParam(sen[i].get("class"),sen[i]);
+	}
 }
 
-function comprehend(word_class,lang){
-	switch(word_class){
-		case "NP":
-			handleNP(lang);
-			break;
-		case "VP":
-			handleVP(lang);
-			break;
-		case "AP":
-			handleAP(lang);
-			break;
-	}
+function getParam(word_class,lang){
+	handleNP(lang);
 }
 
 function handleNP(lang){
@@ -99,11 +90,4 @@ function handleNP(lang){
 			value = key;
 		}
 	}
-}
-function handleVP(lang){
-	var has = lang.has("켜");
-	if(has) action = "TurnOn";
-}
-function handleAP(lang){
-	
 }

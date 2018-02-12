@@ -16,7 +16,7 @@ This uses One-hot encoding method
 "낮춰": "00001001"
 ```
 
-I means __"낮춰"__ can be used both DecreaseBrightness and DecreaseBrightness.
+I means _"낮춰"_ can be used both DecreaseBrightness and DecreaseColortemperature.
 
 
 After read a sentence, we use highest possibility one (one-hot)
